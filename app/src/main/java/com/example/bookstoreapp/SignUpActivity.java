@@ -16,15 +16,15 @@ public class SignUpActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup); // you need to create this layout
+        setContentView(R.layout.activity_signup); 
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         databaseReference = database.getReference("users");
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-        EditText usernameEditText = findViewById(R.id.username); // replace with your ids
-        EditText passwordEditText = findViewById(R.id.password); // replace with your ids
-        Button signUpButton = findViewById(R.id.btn_signup); // replace with your ids
+        EditText usernameEditText = findViewById(R.id.username); 
+        EditText passwordEditText = findViewById(R.id.password);
+        Button signUpButton = findViewById(R.id.btn_signup);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override

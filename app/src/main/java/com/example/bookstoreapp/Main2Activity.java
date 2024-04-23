@@ -16,12 +16,6 @@ import java.util.ArrayList;
 
 public class Main2Activity extends AppCompatActivity {
 
-//    RecyclerView recyclerView;
-//    RecyclerView.LayoutManager layoutManager;
-//    MyRecyclerViewAdapter adapter;
-//
-//    ArrayList<BookItem> data;
-
     private BookViewModel mBookViewModel;
 
     @SuppressLint("MissingInflatedId")
@@ -30,18 +24,6 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-//        recyclerView = findViewById(R.id.recyclerView2);
-//        layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
-//
-//        adapter = new MyRecyclerViewAdapter();
-//        recyclerView.setAdapter(adapter);
-//
-//        mBookViewModel = new ViewModelProvider(this).get(BookViewModel.class);
-//        mBookViewModel.getAllItems().observe(this, newData -> {
-//            adapter.setData((ArrayList<BookItem>) newData);
-//            adapter.notifyDataSetChanged();
-//        });
         getSupportFragmentManager().beginTransaction().replace(R.id.frame2,new RecyclerViewFragment()).commit();
     }
 }

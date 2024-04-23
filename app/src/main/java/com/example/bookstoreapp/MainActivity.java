@@ -46,11 +46,7 @@ import androidx.lifecycle.ViewModelProvider;
 public class MainActivity extends AppCompatActivity{
     EditText inputBookID,inputBookTitle,inputBookISBN,inputBookAuthor,inputBookDesc,inputBookPrice;
     String bookID,bookTitle,bookISBN,bookAuthor,bookDesc,bookPrice;
-//    ArrayList<BookItem> myList = new ArrayList<>();
     DrawerLayout drawer;
-//    RecyclerView recyclerView;
-//    RecyclerView.LayoutManager layoutManager;
-//    MyRecyclerViewAdapter adapter;
     private BookViewModel mBookViewModel;
     DatabaseReference myRef;
     int x_down;
@@ -69,8 +65,6 @@ public class MainActivity extends AppCompatActivity{
         // initializing firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("Books");
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        myRef = database.getReference("Books");
 
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -121,18 +115,8 @@ public class MainActivity extends AppCompatActivity{
         NavigationView navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(new MyNavigationListener());
 
-//        recyclerView = findViewById(R.id.recyclerView);
-//        layoutManager = new LinearLayoutManager(this);
-//        recyclerView.setLayoutManager(layoutManager);
-//
-//        adapter = new MyRecyclerViewAdapter();
-//        adapter.setData(myList);
-//        recyclerView.setAdapter(adapter);
-
         mBookViewModel = new ViewModelProvider(this).get(BookViewModel.class);
         mBookViewModel.getAllItems().observe(this, newData -> {
-//            adapter.setCustomers(newData);
-//            adapter.notifyDataSetChanged();
         });
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frame1,new RecyclerViewFragment()).commit();
@@ -164,8 +148,6 @@ public class MainActivity extends AppCompatActivity{
             editor.apply();
 
             BookItem bookItem = new BookItem(BookId,BookTitle,BookISBN,BookAuthor,BookDesc,BookPrice);
-//            myList.add(bookItem);
-//            adapter.notifyDataSetChanged();
             myRef.push().setValue(bookItem);
             mBookViewModel.insert(bookItem);
         });
@@ -291,13 +273,9 @@ public class MainActivity extends AppCompatActivity{
                 myRef.push().setValue(bookItem);
 
             }else if (id == R.id.RemoveLast){
-//                myList.remove(myList.size()-1);
-//                adapter.notifyDataSetChanged();
                 mBookViewModel.deleteLast();
             }
             else if (id == R.id.RemoveAll){
-//                myList.clear();
-//                adapter.notifyDataSetChanged();
                 mBookViewModel.deleteAll();
                 myRef.removeValue();
             }
@@ -479,7 +457,6 @@ public class MainActivity extends AppCompatActivity{
     @SuppressLint("MissingSuperCall")
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
-//        super.onSaveInstanceState(outState);
         EditText bookTitleSave = findViewById(R.id.BookTitle);
         EditText bookISBNSave = findViewById(R.id.BookISBN);
 
@@ -494,7 +471,6 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-//        super.onRestoreInstanceState(savedInstanceState);
         String bookTittleSave = savedInstanceState.getString("key1");
         String bookISBNSave = savedInstanceState.getString("key2");
 
