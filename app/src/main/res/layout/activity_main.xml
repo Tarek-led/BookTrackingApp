@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/picture"
+    android:foreground="@drawable/ic_launcher_foreground"
+    android:foregroundGravity="right|center_horizontal"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayoutGesture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="554dp"
+        android:background="#956D6D"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <EditText
+        android:id="@+id/BookPrice"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Price"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/BookDescription" />
+
+    <EditText
+        android:id="@+id/BookISBN"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="ISBN"
+        android:inputType="textShortMessage"
+        app:layout_constraintBottom_toTopOf="@+id/BookAuthor"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/BookTitle" />
+
+    <EditText
+        android:id="@+id/BookTitle"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textShortMessage"
+        app:layout_constraintBottom_toTopOf="@+id/BookISBN"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/BookID" />
+
+    <EditText
+        android:id="@+id/BookID"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Book ID"
+        android:inputType="textShortMessage"
+        app:layout_constraintBottom_toTopOf="@+id/BookTitle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/BookAuthor"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Author"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/BookDescription"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/BookISBN" />
+
+    <EditText
+        android:id="@+id/BookDescription"
+        android:layout_width="210dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textLongMessage"
+        app:layout_constraintBottom_toTopOf="@+id/BookPrice"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/BookAuthor" />
+
+    <TextView
+        android:id="@+id/textViewBookPrice"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:text="Price"
+        app:layout_constraintBaseline_toBaselineOf="@+id/BookPrice"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBookID"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:text="Book ID"
+        app:layout_constraintBaseline_toBaselineOf="@+id/BookID"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBookTitle"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:text="Title"
+        app:layout_constraintBottom_toTopOf="@+id/textViewBookISBN"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBookID" />
+
+    <TextView
+        android:id="@+id/textViewBookAuthor"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:text="Author"
+        app:layout_constraintBaseline_toBaselineOf="@+id/BookAuthor"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewBookISBN"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:text="ISBN"
+        app:layout_constraintBottom_toTopOf="@+id/textViewBookAuthor"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBookTitle" />
+
+    <TextView
+        android:id="@+id/textViewBookDescription"
+        android:layout_width="77dp"
+        android:layout_height="28dp"
+        android:text="Description"
+        app:layout_constraintBaseline_toBaselineOf="@+id/BookDescription"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.68" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="36dp" />
+
+    <FrameLayout
+        android:id="@+id/frame1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="458dp"
+        android:layout_marginBottom="149dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

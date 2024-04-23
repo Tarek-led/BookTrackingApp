@@ -1,0 +1,58 @@
+Title: User Registration and Login Feature
+
+Description:
+
+This feature allows users to register and log in to the Book Library application
+using their username and password. This is achieved by using Google's Firebase real-time
+database to store and authenticate user credentials.
+
+How it Works:
+
+1. User Registration:
+
+The SignUpActivity class handles user registration. Upon loading this activity,
+the user is presented with fields to input their username and password, and a button to
+submit their details. When the user presses the 'Sign Up' button, the text entered in the username and password fields
+are retrieved. If either field is empty, a message is displayed to the user asking them to fill all fields.
+If both fields are populated, the details are pushed to the Firebase database. Each user's details are stored
+under a unique node, represented by their username. The username and password are stored as children nodes under each user's node.
+After successfully pushing the details to the database, the user is redirected to the login page.
+Implementation:
+The user registration functionality is implemented in the SignUpActivity class. A Firebase instance is created and a reference to
+the "users" node in the Firebase database is established. The SignUpActivity class presents fields for username and password input
+and a 'Sign Up' button for user registration. When the 'Sign Up' button is clicked, the entered username and password are retrieved.
+If the fields are not empty, these values are pushed to Firebase under a unique child node represented by the username. The password
+is stored as a child node of this user node. Upon successful registration, the user is redirected to the login page.
+
+2. User Login:
+
+The LoginActivity class handles user login. This activity provides fields for the user to input their username and password and a
+button to submit their credentials. Upon pressing the 'Log In' button, the application retrieves the inputted username and password.
+If either field is empty, a prompt is displayed asking the user to enter their username and password. If both fields are populated, a reference
+is made to the Firebase database to the node represented by the inputted username. If the node (i.e., the user) does not exist, a message is displayed
+notifying the user that they do not exist in the database. If the node exists, the stored password is retrieved and compared to the inputted password.
+If the passwords match, the user is successfully logged in and redirected to the main application page. If the passwords do not match, a message is
+displayed notifying the user that they inputted the wrong password.
+Implementation:
+The user login functionality is handled by the LoginActivity class. Similar to registration, a Firebase instance is created and a reference to the
+"users" node is made. The class provides input fields for username and password and a 'Log In' button. When the 'Log In' button is clicked, the entered
+credentials are retrieved. If the fields are not empty, a check is performed in the Firebase database to see if a child node exists with the entered username.
+If such a node exists, the password stored in the database is retrieved and compared with the entered password. On successful validation, the user is logged
+in and redirected to the main application page.
+
+
+3. User Sign-out
+
+As part of the user registration and login feature, the application also provides a means for users to log out of the app.
+This functionality is implemented in the main activity of the application, specifically in the navigation drawer.
+A 'Sign Out' button is placed in the navigation drawer. When this button is pressed, the application invokes Firebase's
+signOut() method to log out the current user. After successfully logging out, the user is redirected back to the login page,
+thereby closing their current session. This way, the application ensures that users can easily end their sessions when they
+are done using the app. As part of best practices, it's always a good idea to provide users with the option to log out to ensure
+the safety and privacy of user data.
+Implementation:
+The user login functionality is handled by the LoginActivity class. Similar to registration, a Firebase instance is created and a
+reference to the "users" node is made. The class provides input fields for username and password and a 'Log In' button. When the 'Log In'
+button is clicked, the entered credentials are retrieved. If the fields are not empty, a check is performed in the Firebase database to see
+if a child node exists with the entered username. If such a node exists, the password stored in the database is retrieved and compared with
+the entered password. On successful validation, the user is logged in and redirected to the main application page.

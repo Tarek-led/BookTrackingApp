@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/addBook"
+        android:title="Add Book" />
+    <item
+        android:id="@+id/RemoveLast"
+        android:title="Remove Last" />
+    <item
+        android:id="@+id/RemoveAll"
+        android:title="Remove All" />
+    <item
+        android:id="@+id/listAll"
+        android:title="List All" />
+    <item
+        android:id="@+id/closeApp"
+        android:title="Close" />
+    <item
+        android:id="@+id/signoutDrawer"
+        android:title="Sign out" />
+</menu>
